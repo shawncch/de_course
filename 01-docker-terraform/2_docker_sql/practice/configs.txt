@@ -1,0 +1,57 @@
+--- postgres container --- database
+
+docker run -it \
+    -e POSTGRES_USER="root" \
+    -e POSTGRES_PASSWORD="root" \
+    -e POSTGRES_DB="ny_taxi" \
+    -v $(pwd)/ny_taxi_postgres_data:/var/lib/postgresql/data \
+    --network=pg-network \
+    --name=postgres_docker \
+    -p 5432:5432 \
+postgres:13
+
+
+
+
+--- pgadmin container --- database gui
+
+docker run -it \
+    -p 8080:80 \
+    -e 'PGADMIN_DEFAULT_EMAIL=admin@admin.com' \
+    -e 'PGADMIN_DEFAULT_PASSWORD=root' \
+    --network=pg-network \
+    --name=pgadmin_docker \
+    -d dpage/pgadmin4
+
+
+
+
+--- original ingestion script, ran locally --- using pandas and sqlalchemy to insert into postgres db
+
+URL="https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+python ingest_data.py\
+    --user=root\
+    --password=root\
+    --host=localhost\
+    --port=5432\
+    --database_name=ny_taxi\
+    --table_name=yellow_taxi_trips\
+    --url=${URL}
+
+
+
+--- build image and dockerize pipeline script ---
+
+docker build -t taxi_ingest:v001 .
+
+
+docker run -it \
+  --network=pg-network \
+  taxi_ingest:v001\
+    --user=root\
+    --password=root\
+    --host=postgres_docker\
+    --port=5432\
+    --database_name=ny_taxi\
+    --table_name=yellow_taxi_trips\
+    --url=${URL}
