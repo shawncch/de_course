@@ -20,3 +20,16 @@ services:
       - "./pgadmin:/var/lib/pgadmin"
     ports:
       - "8080:80" #double quote
+  
+  dataingestion:
+    image: taxi_ingest:v001
+    command:
+      [
+        "--user", "root",
+        "--password", "root",
+        "--host", "pgdatabase",
+        "--port", "5432",
+        "--database_name", "ny_taxi",
+        "--table_name", "yellow_taxi_trips",
+        "--url", "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz"
+      ]
