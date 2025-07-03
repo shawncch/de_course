@@ -14,24 +14,26 @@ def main(args):
     port = args.port
     database_name = args.database_name
     table_name = args.table_name
-    url = args.url
+    trips_url = args.trips_url
+    zones_url = args.zones_url
 
-    csv_name = 'output.csv'
+    trips_csv_name = 'output.csv'
+    zones_csv_name = 'zones.csv'
 
-    os.system(f"wget {url} -O {csv_name}.gz")
+    os.system(f"wget {trips_url} -O {trips_csv_name}.gz")
     print("successfully downloaded the file")
     
-    if os.path.exists(csv_name):
-        os.remove(csv_name)
+    if os.path.exists(trips_csv_name):
+        os.remove(trips_csv_name)
     
-    os.system(f"gunzip {csv_name}.gz")
+    os.system(f"gunzip {trips_csv_name}.gz")
     print("successfully unzipped the file")
+
+    os.system(f"wget {zones_url} -O {zones_csv_name}")
 
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{database_name}')
 
-    df = pd.read_csv(csv_name, nrows= 100)
-
-
+    df = pd.read_csv(trips_csv_name, nrows= 100)
 
     # convert to datetime
     df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
@@ -41,7 +43,14 @@ def main(args):
     df.head(0).to_sql(name = table_name, con=engine, if_exists= "replace")
 
     # iterator to read the file in chunks
-    df_iter = pd.read_csv(csv_name, iterator=True, chunksize = 100000)
+    df_iter = pd.read_csv(trips_csv_name, iterator=True, chunksize = 100000)
+
+
+    # trips ingestion
+    zones_df = pd.read_csv(zones_csv_name)
+
+    zones_df.to_sql("zones", con=engine, if_exists="replace")
+    print("created zones static table and ingested data")
 
     # batch ingestion
     while True:
@@ -81,7 +90,8 @@ if __name__ == "__main__":
     parser.add_argument('--port', help = 'port for postgres')
     parser.add_argument('--database_name', help = 'database name for postgres')
     parser.add_argument('--table_name', help = 'name of table where we will write the results to')
-    parser.add_argument('--url', help = 'url of csv')
+    parser.add_argument('--trips_url', help = 'url of trips csv')
+    parser.add_argument('--zones_url', help = 'url of zones csv')
 
     args = parser.parse_args()
 
