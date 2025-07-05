@@ -9,14 +9,15 @@ terraform {
 
 provider "google" {
   # Configuration options
-  #   credentials = "./keys/my-creds.json"
-  project = "dtc-de-course-464416"
-  region  = "asia-southeast1"
+  # not needed if we have declared env variable for credentials -> creds.json
+  credentials = file(var.creds)
+  project     = var.project_id
+  region      = var.region
 }
 
-resource "google_storage_bucket" "demo-bucket" {     #demo-bucket is a variable -> call it with google_storage_bucket.demo-bucket
-  name          = "dtc-de-course-464416-demo-bucket" # should be unique
-  location      = "ASIA"
+resource "google_storage_bucket" "demo-bucket" { #demo-bucket is a variable -> call it with google_storage_bucket.demo-bucket
+  name          = var.gsb_name
+  location      = var.location
   force_destroy = true
 
   lifecycle_rule {
@@ -27,4 +28,9 @@ resource "google_storage_bucket" "demo-bucket" {     #demo-bucket is a variable 
       type = "Delete"
     }
   }
+}
+
+resource "google_bigquery_dataset" "dataset" {
+  dataset_id = var.dataset_id
+  location   = var.location
 }
