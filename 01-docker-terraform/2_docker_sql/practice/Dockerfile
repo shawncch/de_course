@@ -5,6 +5,6 @@ RUN apt-get install gzip
 RUN pip install pandas sqlalchemy psycopg2
 
 WORKDIR /app
-COPY ingest_data.py ingest_data.py  
+COPY ingest_data_2019.py ingest_data_2019.py  
 
-ENTRYPOINT ["python", "ingest_data.py"]
+ENTRYPOINT ["python", "ingest_data_2019.py"]

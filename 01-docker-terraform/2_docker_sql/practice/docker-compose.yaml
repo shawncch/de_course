@@ -23,7 +23,7 @@ services:
       - "8080:80" #double quote
   
   dataingestion:
-    image: taxi_ingest:v001
+    image: taxi_ingest:v002 #2019 ingestion
     command:
       [
         "--user", "root",
@@ -31,8 +31,8 @@ services:
         "--host", "pgdatabase",
         "--port", "5432",
         "--database_name", "ny_taxi",
-        "--table_name", "yellow_taxi_trips",
-        "--trips_url", "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-01.csv.gz",
+        "--table_name", "yellow_taxi_trips_oct2019",
+        "--trips_url", "wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz",
         "--zones_url", "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv"
       ]
     depends_on:
