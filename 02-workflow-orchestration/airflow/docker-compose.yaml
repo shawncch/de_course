@@ -77,7 +77,12 @@ x-airflow-common:
     BIGQUERY_DATASET: 'demo_dataset'
     GOOGLE_APPLICATION_CREDENTIALS: '/.google/credentials/google_credentials.json'
     AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: 'google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/google_credentials.json'
-
+    PG_USER: ${PG_USER}
+    PG_PASSWORD: ${PG_PASSWORD}
+    PG_HOST: ${PG_HOST}
+    PG_PORT: ${PG_PORT}
+    PG_DATABASE: ${PG_DATABASE}
+    
   volumes:
     - ${AIRFLOW_PROJ_DIR:-.}/dags:/opt/airflow/dags
     - ${AIRFLOW_PROJ_DIR:-.}/logs:/opt/airflow/logs

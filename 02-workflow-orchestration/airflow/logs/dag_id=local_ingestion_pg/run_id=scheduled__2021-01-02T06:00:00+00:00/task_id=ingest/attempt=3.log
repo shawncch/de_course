@@ -1,0 +1,18 @@
+{"timestamp":"2025-07-13T16:07:01.000662","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-13T16:07:01.002237","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_localpg_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-13T16:07:13.501244Z","level":"info","event":"inserted 100000 chunks, took 11.448","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:07:26.316499Z","level":"info","event":"inserted 100000 chunks, took 12.810","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:07:43.282131Z","level":"info","event":"inserted 100000 chunks, took 16.971","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:07:53.213265Z","level":"info","event":"inserted 100000 chunks, took 9.930","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:08:03.098836Z","level":"info","event":"inserted 100000 chunks, took 9.885","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:08:18.008585Z","level":"info","event":"inserted 100000 chunks, took 14.909","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:08:27.432001Z","level":"info","event":"inserted 100000 chunks, took 9.424","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:08:35.674779Z","level":"info","event":"inserted 100000 chunks, took 8.242","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:08:45.736498Z","level":"info","event":"inserted 100000 chunks, took 10.062","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:08:52.594108Z","level":"info","event":"inserted 100000 chunks, took 6.858","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:09:01.407822Z","level":"info","event":"inserted 100000 chunks, took 8.813","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:09:09.445819Z","level":"info","event":"inserted 100000 chunks, took 8.033","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:09:09.653790","level":"warning","event":"/opt/airflow/dags/ingest_data.py:28: DtypeWarning: Columns (6) have mixed types. Specify dtype option on import or set low_memory=False.\n  df = next(df_iter)\n","logger":"py.warnings"}
+{"timestamp":"2025-07-13T16:09:18.683185Z","level":"info","event":"inserted 100000 chunks, took 9.241","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:09:23.861691Z","level":"info","event":"inserted 100000 chunks, took 5.179","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:09:23.871566","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

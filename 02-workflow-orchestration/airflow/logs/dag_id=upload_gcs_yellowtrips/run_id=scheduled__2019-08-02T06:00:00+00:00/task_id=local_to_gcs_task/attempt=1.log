@@ -1,0 +1,21 @@
+{"timestamp":"2025-07-13T17:13:45.901560","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-13T17:13:45.910100","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-13T17:14:09.241179","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-07-13T17:59:33.730121","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-13T17:59:33.735998","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-13T18:00:11.439347","level":"error","event":"Process timed out, PID: 4319","logger":"airflow.utils.timeout.TimeoutPosix"}
+{"timestamp":"2025-07-13T18:00:11.718890Z","level":"error","event":"Exception ignored in: <function WeakKeyDictionary.__init__.<locals>.remove at 0xffff915947c0>","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.741022Z","level":"error","event":"Traceback (most recent call last):","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.743020Z","level":"error","event":"  File \"/usr/local/lib/python3.12/weakref.py\", line 369, in remove","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.746728Z","level":"error","event":"    def remove(k, selfref=ref(self)):","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.754459Z","level":"error","event":"","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.754903Z","level":"error","event":"  File \"/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/timeout.py\", line 69, in handle_timeout","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.757449Z","level":"error","event":"    raise AirflowTaskTimeout(self.error_message)","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.762840Z","level":"error","event":"airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/data_ingestion_gcs_dag.py after 30.0s.","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.765832Z","level":"error","event":"Please take a look at these docs to improve your DAG import time:","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.770746Z","level":"error","event":"* https://airflow.apache.org/docs/apache-airflow/3.0.2/best-practices.html#top-level-python-code","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:11.773046Z","level":"error","event":"* https://airflow.apache.org/docs/apache-airflow/3.0.2/best-practices.html#reducing-dag-complexity, PID: 4319","chan":"stderr","logger":"task"}
+{"timestamp":"2025-07-13T18:00:34.233357","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-07-13T18:11:41.450671","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-13T18:11:41.452228","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-13T18:11:50.334625","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

@@ -1,0 +1,29 @@
+{"timestamp":"2025-07-13T16:02:40.797634","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-13T16:02:40.806499","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_localpg_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-13T16:02:42.163623","level":"error","event":"Task failed with exception","logger":"task","error_detail":[{"exc_type":"ValueError","exc_value":"invalid literal for int() with base 10: 'None'","exc_notes":[],"syntax_error":null,"is_cause":false,"frames":[{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":867,"name":"run"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":1159,"name":"_execute_task"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/bases/operator.py","lineno":397,"name":"wrapper"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/standard/operators/python.py","lineno":216,"name":"execute"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/providers/standard/operators/python.py","lineno":239,"name":"execute_callable"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/callback_runner.py","lineno":81,"name":"run"},{"filename":"/opt/airflow/dags/ingest_data.py","lineno":8,"name":"ingest_callable"},{"filename":"<string>","lineno":2,"name":"create_engine"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/deprecations.py","lineno":375,"name":"warned"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py","lineno":514,"name":"create_engine"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/url.py","lineno":738,"name":"make_url"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/url.py","lineno":794,"name":"_parse_url"}],"is_group":false,"exceptions":[]}]}
+{"timestamp":"2025-07-13T16:23:31.126002","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-13T16:23:31.127503","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_localpg_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-13T16:24:08.116373Z","level":"info","event":"inserted 100000 chunks, took 35.676","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:24:48.037224Z","level":"info","event":"inserted 100000 chunks, took 39.917","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:25:08.748909Z","level":"info","event":"inserted 100000 chunks, took 20.716","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:25:34.620906Z","level":"info","event":"inserted 100000 chunks, took 25.868","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:25:49.754846Z","level":"info","event":"inserted 100000 chunks, took 15.133","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:26:10.509387Z","level":"info","event":"inserted 100000 chunks, took 20.755","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:26:36.052006Z","level":"info","event":"inserted 100000 chunks, took 25.534","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:26:53.517032Z","level":"info","event":"inserted 100000 chunks, took 17.467","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:27:17.253702Z","level":"info","event":"inserted 100000 chunks, took 23.742","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:27:36.585715Z","level":"info","event":"inserted 100000 chunks, took 19.331","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:27:56.990191Z","level":"info","event":"inserted 100000 chunks, took 20.401","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:28:12.553826Z","level":"info","event":"inserted 100000 chunks, took 15.567","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:28:29.820469Z","level":"info","event":"inserted 100000 chunks, took 17.268","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:28:42.423615Z","level":"info","event":"inserted 100000 chunks, took 12.594","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:28:59.059682Z","level":"info","event":"inserted 100000 chunks, took 16.631","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:29:15.764662Z","level":"info","event":"inserted 100000 chunks, took 16.716","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:29:32.672563Z","level":"info","event":"inserted 100000 chunks, took 16.903","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:29:51.073687Z","level":"info","event":"inserted 100000 chunks, took 18.404","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:30:13.148539Z","level":"info","event":"inserted 100000 chunks, took 22.068","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:30:48.654504Z","level":"info","event":"inserted 100000 chunks, took 35.461","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:30:49.151002","level":"warning","event":"/opt/airflow/dags/ingest_data.py:28: DtypeWarning: Columns (6) have mixed types. Specify dtype option on import or set low_memory=False.\n  df = next(df_iter)\n","logger":"py.warnings"}
+{"timestamp":"2025-07-13T16:31:11.155630Z","level":"info","event":"inserted 100000 chunks, took 22.551","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:31:21.718827Z","level":"info","event":"inserted 100000 chunks, took 10.564","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-13T16:31:21.739054","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

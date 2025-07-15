@@ -11,16 +11,19 @@ services:
       - "./ny_taxi_postgres_data:/var/lib/postgresql/data" #double quote
     ports:
       - "5432:5432" #double quote
-  pgadmin:
-    image: dpage/pgadmin4
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=root
-    volumes:
-      # - pgadmin_data:/var/lib/pgadmin
-      - ./pgadmin:/var/lib/pgadmin
-    ports:
-      - "8080:80" #double quote
+    networks:
+      - airflow
+
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   environment:
+  #     - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+  #     - PGADMIN_DEFAULT_PASSWORD=root
+  #   volumes:
+  #     # - pgadmin_data:/var/lib/pgadmin
+  #     - ./pgadmin:/var/lib/pgadmin
+  #   ports:
+  #     - "8080:80" #double quote
   
   dataingestion:
     image: taxi_ingest:v002 #2019 ingestion
@@ -38,7 +41,16 @@ services:
     depends_on:
       - pgdatabase
 
+    networks:
+      - airflow
+
 # volumes:
 #   pgadmin_data:
+
+networks:
+  airflow:
+    external:
+      name: airflow_default
+
 
 
