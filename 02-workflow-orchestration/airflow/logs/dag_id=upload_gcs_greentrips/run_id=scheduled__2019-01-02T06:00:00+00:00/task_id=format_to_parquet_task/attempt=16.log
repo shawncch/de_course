@@ -1,0 +1,24 @@
+{"timestamp":"2025-07-17T16:56:01.566773","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T16:56:01.567765","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T16:56:02.995533Z","level":"info","event":"VendorID                         int64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.996965Z","level":"info","event":"lpep_pickup_datetime     datetime64[s]","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.997176Z","level":"info","event":"lpep_dropoff_datetime    datetime64[s]","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.997408Z","level":"info","event":"store_and_fwd_flag              object","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.997592Z","level":"info","event":"RatecodeID                       int64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.997860Z","level":"info","event":"PULocationID                     int64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.998051Z","level":"info","event":"DOLocationID                     int64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.998235Z","level":"info","event":"passenger_count                  int64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.998525Z","level":"info","event":"trip_distance                  float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.998779Z","level":"info","event":"fare_amount                    float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.999081Z","level":"info","event":"extra                          float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.999277Z","level":"info","event":"mta_tax                        float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.999406Z","level":"info","event":"tip_amount                     float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.999723Z","level":"info","event":"tolls_amount                   float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:02.999936Z","level":"info","event":"ehail_fee                       object","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:03.000075Z","level":"info","event":"improvement_surcharge          float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:03.000188Z","level":"info","event":"total_amount                   float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:03.000346Z","level":"info","event":"payment_type                     int64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:03.000472Z","level":"info","event":"trip_type                        int64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:03.000613Z","level":"info","event":"congestion_surcharge           float64","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:03.000727Z","level":"info","event":"dtype: object","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T16:56:03.543838","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

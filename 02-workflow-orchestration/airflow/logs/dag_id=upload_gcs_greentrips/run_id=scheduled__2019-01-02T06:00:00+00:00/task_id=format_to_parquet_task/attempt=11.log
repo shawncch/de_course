@@ -1,0 +1,9 @@
+{"timestamp":"2025-07-17T09:05:02.138708","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T09:05:02.144912","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T09:05:06.429375Z","level":"info","event":"Index(['VendorID', 'lpep_pickup_datetime', 'lpep_dropoff_datetime',","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T09:05:06.432337Z","level":"info","event":"       'store_and_fwd_flag', 'RatecodeID', 'PULocationID', 'DOLocationID',","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T09:05:06.433939Z","level":"info","event":"       'passenger_count', 'trip_distance', 'fare_amount', 'extra', 'mta_tax',","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T09:05:06.434430Z","level":"info","event":"       'tip_amount', 'tolls_amount', 'ehail_fee', 'improvement_surcharge',","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T09:05:06.435952Z","level":"info","event":"       'total_amount', 'payment_type', 'trip_type', 'congestion_surcharge'],","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T09:05:06.436324Z","level":"info","event":"      dtype='object')","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-17T09:05:06.466349","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

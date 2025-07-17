@@ -25,32 +25,32 @@ services:
   #   ports:
   #     - "8080:80" #double quote
   
-  dataingestion:
-    image: taxi_ingest:v002 #2019 ingestion
-    command:
-      [
-        "--user", "root",
-        "--password", "root",
-        "--host", "pgdatabase",
-        "--port", "5432",
-        "--database_name", "ny_taxi",
-        "--table_name", "yellow_taxi_trips_oct2019",
-        "--trips_url", "wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz",
-        "--zones_url", "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv"
-      ]
-    depends_on:
-      - pgdatabase
+  # dataingestion:
+  #   image: taxi_ingest:v002 #2019 ingestion
+  #   command:
+  #     [
+  #       "--user", "root",
+  #       "--password", "root",
+  #       "--host", "pgdatabase",
+  #       "--port", "5432",
+  #       "--database_name", "ny_taxi",
+  #       "--table_name", "yellow_taxi_trips_oct2019",
+  #       "--trips_url", "wget https://github.com/DataTalksClub/nyc-tlc-data/releases/download/green/green_tripdata_2019-10.csv.gz",
+  #       "--zones_url", "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/misc/taxi_zone_lookup.csv"
+  #     ]
+  #   depends_on:
+  #     - pgdatabase
 
-    networks:
-      - airflow
+    # networks:
+    #   - airflow
 
 # volumes:
 #   pgadmin_data:
 
 networks:
   airflow:
-    external:
-      name: airflow_default
+    external: true
+    name: airflow_default
 
 
-
+# /Users/shawn/desktop/de_course/04-analytics-engineering/ny_taxi
