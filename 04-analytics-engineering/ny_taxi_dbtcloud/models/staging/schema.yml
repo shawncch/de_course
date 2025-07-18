@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: staging
+    database: dtc-de-course-464416 
+    schema: dbtcloud
+    tables:
+      - name: green_tripdata
+      - name: yellow_tripdata
