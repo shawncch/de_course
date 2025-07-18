@@ -1,3 +1,18 @@
 {"timestamp":"2025-07-13T18:40:48.124582","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
 {"timestamp":"2025-07-13T18:40:48.126344","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
 {"timestamp":"2025-07-13T18:40:52.705554","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-07-17T17:12:49.219040","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T17:12:49.223606","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T17:12:51.081544","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-07-17T17:25:24.849870","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T17:25:24.855054","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T17:25:27.939599","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-07-17T17:45:50.097209","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T17:45:50.105431","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T17:45:54.266022","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-07-17T17:55:12.599500","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T17:55:12.600659","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T17:55:14.686835","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
+{"timestamp":"2025-07-17T18:09:43.641396","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-17T18:09:43.642516","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/data_ingestion_gcs_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-17T18:09:46.319243","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

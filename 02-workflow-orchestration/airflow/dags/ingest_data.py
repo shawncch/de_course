@@ -10,8 +10,12 @@ def ingest_callable(user, password, host, port, database_name, table_name, trips
     df = pd.read_csv(trips_csv_name, nrows= 100)
 
     # convert to datetime
-    df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
-    df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+    try:
+        df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+        df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+    except AttributeError:
+        df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
+        df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
 
     # create or replace table
     df.head(0).to_sql(name = table_name, con=engine, if_exists= "replace")
@@ -26,8 +30,13 @@ def ingest_callable(user, password, host, port, database_name, table_name, trips
             start_time = time()
 
             df = next(df_iter)
-            df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
-            df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+            
+            try:
+                df.tpep_dropoff_datetime = pd.to_datetime(df.tpep_dropoff_datetime)
+                df.tpep_pickup_datetime = pd.to_datetime(df.tpep_pickup_datetime)
+            except AttributeError:
+                df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
+                df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
 
             df.to_sql(name=table_name, con=engine, if_exists = "append")
 

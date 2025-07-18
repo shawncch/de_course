@@ -1,0 +1,4 @@
+docker run -it\
+    --mount type=bind,source=${HOME}/.dbt/profiles.yml,target=/root/.dbt/profiles.yml\
+    --mount type=bind,source=$(pwd)/ny_taxi,target=/usr/app\
+    dbt-postgres:v1 run

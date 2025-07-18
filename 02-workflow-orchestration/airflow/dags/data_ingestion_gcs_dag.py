@@ -12,6 +12,8 @@ from google.cloud import storage
 from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateExternalTableOperator
 import pyarrow.csv as pv
 import pyarrow.parquet as pq
+import pyarrow as pa
+import pandas as pd
 
 PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
@@ -26,6 +28,15 @@ def format_to_parquet(src_file):
         logging.error("Can only accept source files in CSV format, for the moment")
         return
     table = pv.read_csv(src_file)
+    target_schema = table.schema
+
+    # Check if ehail_fee exists, then cast
+    if 'ehail_fee' in table.column_names:
+        table = table.set_column(
+            target_schema.get_field_index("ehail_fee"),
+            "ehail_fee",
+            pa.array(table["ehail_fee"].to_pandas(), type=pa.float64())
+        )
     pq.write_table(table, src_file.replace('.csv', '.parquet'))
 
 
@@ -56,7 +67,7 @@ def download_format_upload_dag(dag, dataset_url, dataset_file, parquet_file, gcs
     with dag:
         download_dataset_task = BashOperator(
             task_id="download_dataset_task",
-            bash_command=f"echo {dataset_url} && wget --no-verbose {dataset_url} -O {PATH_TO_LOCAL_HOME}/{dataset_file}.gz && gunzip -f {PATH_TO_LOCAL_HOME}/{dataset_file}.gz || echo 'invalid link or file not in gz format' && wget {dataset_url} -O {PATH_TO_LOCAL_HOME}/{dataset_file}"
+            bash_command=f"echo {dataset_url} && wget --no-verbose {dataset_url} -O {PATH_TO_LOCAL_HOME}/{dataset_file}.gz && gunzip -f {PATH_TO_LOCAL_HOME}/{dataset_file}.gz"
         )
 
         format_to_parquet_task = PythonOperator(
