@@ -7,7 +7,7 @@ with trip_data as (
 )
 select
     --identifiers
-    {{ dbt_utils.generate_surrogate_key(["vendorid", "tpep_pickup_datetime"])}} as trip_id,
+    {{ dbt_utils.generate_surrogate_key(["vendorid", "tpep_pickup_datetime"])}} as tripid,
     {{ dbt.safe_cast("vendorid", api.Column.translate_type("integer")) }} as vendorid,
     {{ dbt.safe_cast("ratecodeid", api.Column.translate_type("integer")) }} as ratecodeid,
     {{ dbt.safe_cast("pulocationid", api.Column.translate_type("integer")) }} as pickup_locationid,
@@ -34,7 +34,7 @@ select
     cast(improvement_surcharge as numeric) as improvement_surcharge,
     cast(total_amount as numeric) as total_amount,
     coalesce({{ dbt.safe_cast("payment_type", api.Column.translate_type("integer")) }}, 0) as payment_type,
-    {{ get_payment_type_description("payment_type") }} as payment_description
+    {{ get_payment_type_description("payment_type") }} as payment_type_description
     -- cast(congestion_surcharge as numeric)
 
 from trip_data
