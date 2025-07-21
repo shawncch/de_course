@@ -59,4 +59,4 @@ from
 inner join
     taxi_zones pu_zones on trips.pickup_locationid = pu_zones.locationid 
 inner join
-    taxi_zones do_zones on trips.dropff_locationid = do_zones.locationid
+    taxi_zones do_zones on trips.dropoff_locationid = do_zones.locationid
