@@ -13,6 +13,14 @@ services:
       - "5432:5432" #double quote
     networks:
       - airflow
+  
+  metabase:
+    image: metabase/metabase:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - airflow
+    
 
   # pgadmin:
   #   image: dpage/pgadmin4
