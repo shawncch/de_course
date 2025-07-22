@@ -53,7 +53,11 @@ select
     trips.improvement_surcharge, 
     trips.total_amount, 
     trips.payment_type, 
-    trips.payment_type_description
+    trips.payment_type_description,
+    extract(year from trips.pickup_datetime) as pickup_year,
+    extract(month from trips.pickup_datetime) as pickup_month,
+    extract(quarter from trips.pickup_datetime) as pickup_quarter,
+    concat (extract(year from trips.pickup_datetime), '/Q', extract(quarter from trips.pickup_datetime)) as pickup_year_quarter
 from
     all_trips trips
 inner join
