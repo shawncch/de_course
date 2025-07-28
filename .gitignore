@@ -9,6 +9,7 @@
 *.parquet
 *.csv.gz
 *.crc
+*.jar
 fhvhv_tripdata_2021-01.csv
 
 # Crash log files
