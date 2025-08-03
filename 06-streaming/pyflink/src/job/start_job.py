@@ -34,8 +34,8 @@ def create_events_source_kafka(t_env):
             'connector' = 'kafka',
             'properties.bootstrap.servers' = 'redpanda-1:29092',
             'topic' = 'test-topic',
-            'scan.startup.mode' = 'latest-offset',
-            'properties.auto.offset.reset' = 'latest',
+            'scan.startup.mode' = 'earliest-offset',
+            'properties.auto.offset.reset' = 'earliest',
             'format' = 'json'
         );
         """
@@ -64,7 +64,7 @@ def log_processing():
                         TO_TIMESTAMP_LTZ(event_timestamp, 3) as event_timestamp
                     FROM {source_table}
                     """
-        ).wait()
+        ).wait() #waiting for new data to come in
 
     except Exception as e:
         print("Writing records from Kafka to JDBC failed:", str(e))
