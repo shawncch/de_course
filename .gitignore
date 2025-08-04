@@ -8,6 +8,7 @@
 *.tfstate.*
 *.parquet
 *.csv.gz
+*.csv
 *.crc
 *.jar
 fhvhv_tripdata_2021-01.csv
